@@ -92,6 +92,16 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://webtools-labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "通勤手当の非課税限度額計算ツール" }
+  ]
+}
+</script>
 <style>
 :root {
   --bg: #ffffff;
@@ -237,10 +247,14 @@ footer.site-footer a { color: var(--accent); }
 .faq-item p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; }
 
 [hidden] { display: none !important; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 <div class="page">
+  <nav class="breadcrumb" aria-label="パンくずリスト"><a href="https://webtools-labs.com/">ホーム</a> / 通勤手当の非課税限度額計算ツール</nav>
   <header class="masthead">
     <h1>通勤手当の非課税限度額計算ツール</h1>
     <p class="lede">通勤方法と実際の支給額を入れるだけで、通勤手当のうち非課税になる金額と、課税される超過分の目安を計算できます。</p>
