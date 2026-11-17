@@ -184,7 +184,7 @@ tr.best { background: var(--best-bg); }
 tr.na td { color: var(--muted); }
 
 .ref-table { overflow-x: auto; }
-.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 0; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
 .ref-table tr.highlight td { background: var(--best-bg); }
@@ -268,6 +268,15 @@ footer.site-footer a { color: var(--accent); }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
 .breadcrumb a { color: var(--accent); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
+/* スマホで表が画面からはみ出さないように（2026-11-17） */
+@media (max-width: 600px) {
+  .ref-table table { font-size: 0.8rem; }
+  .ref-table th, .ref-table td { padding: 0.45rem 0.3rem; }
+  .ref-table th, .ref-table td:first-child { white-space: normal; }
+  .ref-table td.nw { white-space: nowrap; }
+  .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
+  .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
+}
 </style>
 </head>
 <body>
@@ -362,17 +371,17 @@ footer.site-footer a { color: var(--accent); }
         <thead><tr><th>片道の通勤距離</th><th class="num">1か月あたりの非課税限度額</th></tr></thead>
         <tbody>
           <tr><td>2km未満</td><td class="num">全額課税</td></tr>
-          <tr><td>2km以上10km未満</td><td class="num">4,200円</td></tr>
-          <tr><td>10km以上15km未満</td><td class="num">7,300円</td></tr>
-          <tr><td>15km以上25km未満</td><td class="num">13,500円</td></tr>
-          <tr><td>25km以上35km未満</td><td class="num">19,700円</td></tr>
-          <tr><td>35km以上45km未満</td><td class="num">25,900円</td></tr>
-          <tr><td>45km以上55km未満</td><td class="num">32,300円</td></tr>
-          <tr><td>55km以上65km未満</td><td class="num">38,700円</td></tr>
-          <tr class="highlight"><td>65km以上75km未満</td><td class="num">45,700円</td></tr>
-          <tr class="highlight"><td>75km以上85km未満</td><td class="num">52,700円</td></tr>
-          <tr class="highlight"><td>85km以上95km未満</td><td class="num">59,600円</td></tr>
-          <tr class="highlight"><td>95km以上</td><td class="num">66,400円</td></tr>
+          <tr><td>2km以上10km未満</td><td class="num nw">4,200円</td></tr>
+          <tr><td>10km以上15km未満</td><td class="num nw">7,300円</td></tr>
+          <tr><td>15km以上25km未満</td><td class="num nw">13,500円</td></tr>
+          <tr><td>25km以上35km未満</td><td class="num nw">19,700円</td></tr>
+          <tr><td>35km以上45km未満</td><td class="num nw">25,900円</td></tr>
+          <tr><td>45km以上55km未満</td><td class="num nw">32,300円</td></tr>
+          <tr><td>55km以上65km未満</td><td class="num nw">38,700円</td></tr>
+          <tr class="highlight"><td>65km以上75km未満</td><td class="num nw">45,700円</td></tr>
+          <tr class="highlight"><td>75km以上85km未満</td><td class="num nw">52,700円</td></tr>
+          <tr class="highlight"><td>85km以上95km未満</td><td class="num nw">59,600円</td></tr>
+          <tr class="highlight"><td>95km以上</td><td class="num nw">66,400円</td></tr>
         </tbody>
       </table>
     </div>
